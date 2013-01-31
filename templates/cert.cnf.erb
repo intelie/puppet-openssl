@@ -3,9 +3,10 @@
 # SSLeay example configuration file.
 #
 
-## RANDFILE assignment below is commented because it causes the following error:
-## error:0E065068:configuration file routines:STR_COPY:variable has no value:conf_def.c:629:line 6
-#RANDFILE                = $ENV::HOME/.rnd
+# This definition stops the following lines choking if HOME isn't
+# defined.
+HOME                    = .
+RANDFILE                = $ENV::HOME/.rnd
 
 [ req ]
 default_bits            = 2048
